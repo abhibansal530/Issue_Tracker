@@ -1,0 +1,12 @@
+#a{text-align:center;margin-top:auto;padding-top:20px;}
+.nav {margin-top:30px;}
+.nav #one{margin-left:50px;}
+.nav #two{margin-left:30px;}
+.nav #three{float:right; margin-right:50px;}
+.main { -moz-box-shadow:    4px 4px 5px 6px #aaa;
+      -webkit-box-shadow: 4px 4px 5px 6px #aaa;
+        box-shadow:         4px 4px 5px 6px #aaa;
+    margin-top:10px;
+    margin-left:20px;margin-right:20px;
+display:block;height:100vh;}
+
