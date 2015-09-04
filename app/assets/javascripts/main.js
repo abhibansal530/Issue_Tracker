@@ -1,9 +1,9 @@
 var my=angular.module('myapp',['ngRoute']);
 my.config(function($routeProvider){
-	$routeProvider.when("/",
+	$routeProvider.when("/login",
 	{
-		templateUrl: "",
-		controller: ""
+		templateUrl: "/login.html",
+		controller: "loginctrl"
 	}
 	)
 	.otherwise({

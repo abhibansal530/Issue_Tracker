@@ -1,12 +1,17 @@
-var my=angular.module('myapp',[]);
-//my.config(['$routeProvider',function($routeProvider){
-//	$routeProvider.when("",
-//	{
-//		templateUrl: "public/login.html",
-//		controller: "loginctrl"
-//	}
-//	)
-//	.otherwise({
-//		template: "Not set"
-//	});
-//}])
+var my=angular.module('myapp',['ui.router']);
+my.config(['$stateProvider','$urlRouterProvider',
+	function($stateProvider,$urlRouterProvider)
+	{
+		$stateProvider.state('login',{
+			url:'/login',
+			templateUrl:'login.html',
+			controller:'loginctrl'
+		});
+		$stateProvider.state('register',{
+			url:'/register',
+			templateUrl:'register.html',
+			controller:'regcntrl'
+		});
+		$urlRouterProvider.otherwise('/home');
+	}]);
+

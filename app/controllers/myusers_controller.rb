@@ -38,12 +38,17 @@ class MyusersController < ApplicationController
   # POST /myusers
   # POST /myusers.json
   def create
-    @myuser = Myuser.new(myuser_params)
-
-    if @myuser.save
-      render json: @myuser, status: :created, location: @myuser
+    @my = Myuser.find_by_email(params[:myuser][:email])
+    if @my
+      render json: {"msg":available}
     else
-      render json: @myuser.errors, status: :unprocessable_entity
+      @myuser = Myuser.new(myuser_params)
+
+      if @myuser.save
+        render json: @myuser, status: :created, location: @myuser
+      else
+        render json: @myuser.errors, status: :unprocessable_entity
+      end
     end
   end
 
