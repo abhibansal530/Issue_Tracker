@@ -1,11 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="myapp">
 <head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+<script src="angular-ui-router.js"></script>
+<script src="main.js"></script>
+<script src="login.js"></script>
 	<title></title>
 </head>
-<body>
+<body ng-controller="loginctrl">
 <h1>Login</h1>
-<form ng-submit="login()">
+<div class="alert alert-danger" ng-show="error">
+	There was a problem logging in. Please try again.
+</div>
+<form ng-submit="login()" >
   <div class="input-group">
     <input type="email" class="form-control" placeholder="Email" ng-model="user.email">
   </div>
