@@ -1,6 +1,7 @@
-my.controller('regcntrl',['$scope','$http',
-	function($scope,$http){
+my.controller('regcntrl',['$scope','$http','$state',
+	function($scope,$http,$state){
 		$scope.user={};
+		$scope.available=false
 		console.log("inside regcntrl")
 		$scope.register=function(){
 			var url ='http://localhost:3000/myusers/register'
@@ -9,8 +10,13 @@ my.controller('regcntrl',['$scope','$http',
 			$http
 			.post(url,details)
 			.success(function(data){
-				console.log(data)
-				console.log("registered")
+				//console.log(data)
+				//console.log("registered")
+				if(data.msg=="registered")
+					$scope.available=true
+				else
+					$state.go('main');
+
 			})
 			.error(function(data){
 				console.log(data)

@@ -40,7 +40,7 @@ class MyusersController < ApplicationController
   def create
     @my = Myuser.find_by_email(params[:myuser][:email])
     if @my
-      render json: {"msg":available}
+      render json: {"msg":"registered"}
     else
       @myuser = Myuser.new(myuser_params)
 

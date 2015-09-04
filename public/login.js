@@ -24,5 +24,8 @@ function($scope,$http,$state){
 			console.log(data)
 		})
 	}
+	$scope.logout=function(){
+		$state.go('home');
+	}
 }]
 );
