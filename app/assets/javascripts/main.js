@@ -1,8 +1,12 @@
-var my=angularjs.module('myapp',['ngRoute','ui.router'])
-.config(function($routeProvider,$httpProvider){
-	$routeProvider.when('/login',{
-		templateUrl : 'login.html' ,
-		controller : 'loginctrl'
-	})
-	.otherwise('/login');
-});
+var my=angular.module('myapp',['ngRoute']);
+my.config(function($routeProvider){
+	$routeProvider.when("/",
+	{
+		templateUrl: "",
+		controller: ""
+	}
+	)
+	.otherwise({
+		template: "Not set"
+	});
+})

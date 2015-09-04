@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   post 'myusers' => 'myusers#login'
+  post 'myusers/register' => 'myusers#create'
   resources :myusers, except: [:new, :edit]
 
   # The priority is based upon order of creation: first created -> highest priority.
