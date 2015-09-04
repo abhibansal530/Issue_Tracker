@@ -1,4 +1,4 @@
-var my=angular.module('myapp',['ui.router']);
+var my=angular.module('myapp',['ui.router','ngCookies']);
 my.service('user_details',function(){
 	var user= {};
 

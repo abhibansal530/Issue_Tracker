@@ -4,7 +4,7 @@ class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
   def index
-    puts "Hello"
+    #puts "Hello"
     @projects = Project.all
 
     render json: @projects

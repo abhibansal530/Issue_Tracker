@@ -1,9 +1,9 @@
-my.controller('loginctrl',['$scope','$http','$state','user_details',
-function($scope,$http,$state,user_details){
-
+my.controller('loginctrl',['$scope','$http','$state','user_details','$cookies','$cookieStore',
+function($scope,$http,$state,user_details,$cookies,$cookieStore){
 	$scope.user={};
 	$scope.error=false
 	console.log("inside conr")
+	//console.log($cookies.name)
 	$scope.login=function(){
 		var url='http://localhost:3000/myusers'
 		var details = { myuser: {email: $scope.user.email, password: $scope.user.password}};
@@ -17,7 +17,8 @@ function($scope,$http,$state,user_details){
 				$scope.error=true;
 			else
 				{
-					user_details.setEmail($scope.user.email);
+					//user_details.setEmail($scope.user.email);
+					$cookieStore.put('user_email',$scope.user.email)
 
 					$state.go('main');	
 					}	//console.log(data)
