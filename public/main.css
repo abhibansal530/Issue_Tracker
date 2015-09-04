@@ -10,3 +10,5 @@
     margin-left:20px;margin-right:20px;
 display:block;height:100vh;}
 
+.btn.btn-primary, .form-control, .login{margin-top:20px; margin-left:40px;}
+#footnote{margin-top:30px;margin-left:30px;}
