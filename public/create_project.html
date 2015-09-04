@@ -1,0 +1,21 @@
+<div ng-controller="createProject">
+	<form ng-submit="insert_project()">
+		<span>
+			Name of project:
+		</span>
+		<input type="text" ng-model="project.name"></input>
+		<br>
+		<span>
+			Access level:
+		</span>
+		<select ng-model="project.type">
+			<option value="public" selected>public</option>
+			<option value="private" >private</option>
+		</select>
+		<br>
+		<span>Description</option>
+		<input type="textbox" ng-model="project.description"></input>
+		<br>
+		<button type="submit">create project</button>
+	</form>
+</div>

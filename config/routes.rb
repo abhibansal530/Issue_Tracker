@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   resources :projects, except: [:new, :edit]
+  get 'getproject' => 'projects#getProject'
+  post 'createproject' => 'projects#create'
   post 'myusers' => 'myusers#login'
   post 'myusers/register' => 'myusers#create'
   resources :myusers, except: [:new, :edit]

@@ -1,5 +1,5 @@
-my.controller('loginctrl',['$scope','$http','$state',
-function($scope,$http,$state){
+my.controller('loginctrl',['$scope','$http','$state','user_details',
+function($scope,$http,$state,user_details){
 
 	$scope.user={};
 	$scope.error=false
@@ -7,7 +7,7 @@ function($scope,$http,$state){
 	$scope.login=function(){
 		var url='http://localhost:3000/myusers'
 		var details = { myuser: {email: $scope.user.email, password: $scope.user.password}};
-		console.log("inside func")
+		//console.log("inside func")
 		var user=$scope.user
 		$http
 		.post(url,details)
@@ -16,9 +16,11 @@ function($scope,$http,$state){
 			if (data.msg == "bye")
 				$scope.error=true;
 			else
-				$state.go('main')
-			
-			//console.log(data)
+				{
+					user_details.setEmail($scope.user.email);
+
+					$state.go('main');	
+					}	//console.log(data)
 		})
 		.error(function(data){
 			console.log(data)

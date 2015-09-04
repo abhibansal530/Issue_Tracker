@@ -4,9 +4,15 @@ class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
   def index
+    puts "Hello"
     @projects = Project.all
 
     render json: @projects
+  end
+
+  def getProject
+    @project= Project.find_by_owner_id(params[:owner_id])
+    render json: @project
   end
 
   # GET /projects/1
