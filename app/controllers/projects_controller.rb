@@ -3,6 +3,11 @@ class ProjectsController < ApplicationController
 
   # GET /projects
   # GET /projects.json
+
+  def showall
+    @all= Project.where(permission: "public").to_a
+    render json: @all
+  end
   def index
     #puts "Hello"
     @projects = Project.all

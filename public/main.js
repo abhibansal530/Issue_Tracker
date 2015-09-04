@@ -35,6 +35,11 @@ my.config(['$stateProvider','$urlRouterProvider',
 			templateUrl:'create_project.html',
 			controller: 'createProject'
 		});
+		$stateProvider.state('all',{
+			url:'/all',
+			templateUrl:'projects.html',
+			controller:'allProjects'
+		});
 		$urlRouterProvider.otherwise('/home');
 	}]);
 
