@@ -1,5 +1,5 @@
-my.controller('regcntrl',['$scope','$http','$state',
-	function($scope,$http,$state){
+my.controller('regcntrl',['$scope','$http','$state','$cookies','$cookieStore',
+	function($scope,$http,$state,$cookies,$cookieStore){
 		$scope.user={};
 		$scope.available=false
 		console.log("inside regcntrl")
@@ -15,6 +15,7 @@ my.controller('regcntrl',['$scope','$http','$state',
 				if(data.msg=="registered")
 					$scope.available=true
 				else
+					$cookieStore.put('user_email',$scope.user.email)
 					$state.go('main');
 
 			})

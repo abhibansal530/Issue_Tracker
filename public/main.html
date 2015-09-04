@@ -8,9 +8,9 @@
             <a ng-click="logout" id='four' href='#logout'>logout</a>
             <a href='#create_project' id='five'>Create Project</a>
         </div>
-       <div ng-repeat='project in projects'>
-            <p> {{project.name}}</p>
-            <p> {{project.description}}</p>
+       <div ng-repeat='p in projects'>
+            <p> {{p.name}}</p>
+            <p> {{p.description}}</p>
             <p> create issue</p>
             <p> assign issue </p>
         </div>

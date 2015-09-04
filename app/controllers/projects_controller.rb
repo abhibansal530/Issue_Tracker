@@ -11,7 +11,10 @@ class ProjectsController < ApplicationController
   end
 
   def getProject
-    @project= Project.find_by_owner_id(params[:owner_id])
+    puts "Hello"
+    puts params[:owner_id]
+    #@project= Project.find_by_owner_id(params[:owner_id])
+    @project = Project.where(owner_id: params[:owner_id]).to_a
     render json: @project
   end
 
