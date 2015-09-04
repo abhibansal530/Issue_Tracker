@@ -11,7 +11,7 @@ class MyusersController < ApplicationController
 
   def login
     @myuser=Myuser.find_by_email(params[:myuser][:email])
-    puts params
+    #puts params
     if @myuser
       if @myuser.password==params[:myuser][:password]
         render json: {
@@ -19,7 +19,7 @@ class MyusersController < ApplicationController
         }
       else
         render json:{
-          "msg":"wrong password"
+          "msg":"bye"
         }
       end
     else

@@ -12,6 +12,11 @@ my.config(['$stateProvider','$urlRouterProvider',
 			templateUrl:'register.html',
 			controller:'regcntrl'
 		});
+		$stateProvider.state('main',{
+			url:'/main',
+			templateUrl:'main.html'
+			//controller:'main'
+		});
 		$urlRouterProvider.otherwise('/home');
 	}]);
 
