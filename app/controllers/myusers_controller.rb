@@ -10,10 +10,23 @@ class MyusersController < ApplicationController
   end
 
   def login
-    #@myuser=Myuser.find(params[:email])
-    render json: {
-      "msg":"hello"
-    }
+    @myuser=Myuser.find_by_email(params[:myuser][:email])
+    puts params
+    if @myuser
+      if @myuser.password==params[:myuser][:password]
+        render json: {
+          "msg":"hello"
+        }
+      else
+        render json:{
+          "msg":"wrong password"
+        }
+      end
+    else
+      render json: {
+        "msg":"bye"
+      }
+    end
   end
 
   # GET /myusers/1
