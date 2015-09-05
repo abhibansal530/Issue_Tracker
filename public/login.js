@@ -23,7 +23,7 @@ function($scope,$http,$state,user_details,$cookies,$cookieStore){
 					$cookieStore.put('user_email',$scope.user.email)
 
 					$state.go('main');	
-					}	//console.log(data)
+				}	//console.log(data)
 		})
 		.error(function(data){
 			console.log(data)

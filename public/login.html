@@ -1,17 +1,19 @@
-    <h1 id='a'>The Issue Tracker</h1>
-    <div class='login'>
-<h1>Login</h1>
-<div class="alert alert-danger" ng-show="error">
-	There was a problem logging in. Please try again.
-</div>
-<form ng-submit="login()" >
-  <div class="input-group">
-    <input type="email" class="form-control" placeholder="Email" ng-model="user.email">
+<div ng-controller="loginctrl">
+  <h1 id='a'>The Issue Tracker</h1>
+  <div class='login'>
+    <h1>Login</h1>
+    <div class="alert alert-danger" ng-show="error">
+	   There was a problem logging in. Please try again.
   </div>
+  <form ng-submit="login()" >
+    <div class="input-group">
+      <input type="email" class="form-control" placeholder="Email" ng-model="user.email">
+    </div>
   <div class="input-group">
     <input type="password" class="form-control" placeholder="Password" ng-model="user.password">
   </div>
-  <button type="submit" class="btn btn-primary" value="Log In">Submit</button>
-</form>
-<p id="footnote"> not a member? <a href="#register">signup now</a></p>
+    <button type="submit" class="btn btn-primary" value="Log In">Submit</button>
+  </form>
+  <p id="footnote"> not a member? <a href="#register">signup now</a></p>
+  </div>
 </div>

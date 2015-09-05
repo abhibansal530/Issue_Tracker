@@ -8,6 +8,7 @@ my.service('user_details',function(){
 		setEmail: function(value1){ user.email= value1;} 
 	};
 })
+
 my.config(['$stateProvider','$urlRouterProvider',
 	function($stateProvider,$urlRouterProvider)
 	{
@@ -23,8 +24,8 @@ my.config(['$stateProvider','$urlRouterProvider',
 		});
 		$stateProvider.state('main',{
 			url:'/main',
-			templateUrl:'main.html'
-			//controller:'main'
+			templateUrl:'main.html',
+			controller:'mainctrl'
 		});
 		$stateProvider.state('home',{
 			url:'/home',

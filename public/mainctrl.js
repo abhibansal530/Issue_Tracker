@@ -14,7 +14,7 @@ my.controller('mainctrl',['$scope','$http','user_details','$cookies','$cookieSto
 			params: {owner_id : $cookieStore.get('user_email') }
 		})
 		.success(function(data){
-			$scope.projects= data.projects;
+			$scope.ps= data.projects;
 			console.log(data)
 			//console.log($scope.projects)
 			//for (a in data.project){
